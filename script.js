@@ -11,8 +11,13 @@ var startQuizBtn = document.createElement("button");
 
 // Stored li elements in a variable
 var listItems = document.getElementsByTagName("li");
-var timeLeft = 70;
+
+// Global variables
+var timeLeft = 75;
 var timeInterval;
+var score = 0;
+var correct;
+
 // Set the text content of my elements
 h1ElCoding.textContent = "Coding Quiz Challenge!";
 highScoreLiEl.textContent = "View Highscores";
@@ -45,17 +50,14 @@ h1ElCoding.className += "h1ElCoding-class";
 paraElIntro.className += "paraElIntro-class";
 startQuizBtn.className += "startQuizBtn-class"
 
-// Timer function
-function setTimer(){
-    var timeInterval = setInterval(function(){
-        timeLeft--;
-        timerLiEl.textContent="Time: " + timeLeft;
-        if(timeLeft === 0) {
-            clearInterval(timeInterval)
-            alert("you lose")
-        }
-    },1000);
-}
+// Global variables
+var timeLeft = 75;
+var timeInterval;
+var score = 0;
+var correct;
+
+
+
 
 // Quiz question object
 var quizQuestions = [{
@@ -95,3 +97,33 @@ var quizQuestions = [{
     correctAnswer: "d"}, 
 
 ];
+
+
+function hide (x) {
+   x.style.display="none";
+
+}
+
+
+function show(x) {
+    x.style.display="initial"
+}
+
+
+function startQuiz() {
+    hide(mainDivEl);
+
+    // Timer function
+    timeInterval = setInterval(function() {
+        timeLeft--;
+        timerLiEl.textContent = "Time: " + timeLeft;
+        
+        if(timeLeft === 0) {
+            clearInterval(timeInterval);
+            show(mainDivEl);
+        }
+    },1000);
+}
+
+
+startQuizBtn.addEventListener("click" , startQuiz);
