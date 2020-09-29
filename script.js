@@ -57,3 +57,41 @@ function setTimer(){
     },1000);
 }
 
+// Quiz question object
+var quizQuestions = [{
+    question: "Commonly used data types DO NOT include:",
+    choiceA: "1. strings",
+    choiceB: "2. booleans",
+    choiceC: "3. alerts",
+    choiceD: "4. numbers",
+    correctAnswer: "c"},
+{
+    question: "The condition in an if/else statement is enclosed within ________.",
+    choiceA: "1. quotes",
+    choiceB: "2. curly brackets",
+    choiceC: "3. parentheses",
+    choiceD: "4. square brackets",
+    correctAnswer: "b"},
+{
+    question: "Arrays in JavaScript can be used to store ________.",
+    choiceA: "1. numbers and strings",
+    choiceB: "2. other arrays",
+    choiceC: "3. booleans",
+    choiceD: "4. all of the above",
+    correctAnswer: "d"},
+{
+    question: "String values must be enclosed within ________ when being assigned to variables.",
+    choiceA: "1. commas",
+    choiceB: "2. curly brackets",
+    choiceC: "3. quotes",
+    choiceD: "4. parentheses",
+    correctAnswer: "c"}, 
+{
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    choiceA: "1. JavaScript",
+    choiceB: "2. terminal/bash",
+    choiceC: "3. for loops",
+    choiceD: "4. console.log",
+    correctAnswer: "d"}, 
+
+];
