@@ -1,0 +1,58 @@
+* {
+    background-color: gray;
+}
+
+.ul-class {
+    list-style-type: none;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px 40px 20px 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.highscore-class {
+    float: left;
+}
+
+.timer-class {
+    float: right;
+    
+}
+
+body {
+    display: grid;
+    text-align: center;
+    margin-top: 0%;
+    background-color: gray;
+    color: white;
+}
+
+.mainDiv-class {
+    display:flex 2;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.paraElIntro-class {
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 9%;
+    margin-right: 9%;
+    font-size: 40px;
+}
+
+.startQuizBtn-class {
+    text-align: center;
+    box-shadow: lightslategray;
+    background-color: black;
+    color: white;
+    border:black;
+    border-width: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 30px;
+    
+}
