@@ -11,11 +11,12 @@ var startQuizBtn = document.createElement("button");
 
 // Stored li elements in a variable
 var listItems = document.getElementsByTagName("li");
-
+var timeLeft = 70;
+var timeInterval;
 // Set the text content of my elements
 h1ElCoding.textContent = "Coding Quiz Challenge!";
 highScoreLiEl.textContent = "View Highscores";
-timerLiEl.textContent = "Time: ";
+timerLiEl.textContent = "Time: " + timeLeft;
 paraElIntro.textContent =
   "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!";
 startQuizBtn.textContent = "Start Quiz";
@@ -30,8 +31,8 @@ listEls.appendChild(timerLiEl);
 // Main content path
 body.appendChild(mainDivEl);
 mainDivEl.appendChild(h1ElCoding);
-h1ElCoding.appendChild(paraElIntro);
-h1ElCoding.appendChild(startQuizBtn);
+mainDivEl.appendChild(paraElIntro);
+mainDivEl.appendChild(startQuizBtn);
 
 // Add classes to elements.
 navEl.className += "nav-class";
@@ -43,4 +44,16 @@ mainDivEl.className += "mainDiv-class"
 h1ElCoding.className += "h1ElCoding-class";
 paraElIntro.className += "paraElIntro-class";
 startQuizBtn.className += "startQuizBtn-class"
+
+// Timer function
+function setTimer(){
+    var timeInterval = setInterval(function(){
+        timeLeft--;
+        timerLiEl.textContent="Time: " + timeLeft;
+        if(timeLeft === 0) {
+            clearInterval(timeInterval)
+            alert("you lose")
+        }
+    },1000);
+}
 
