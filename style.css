@@ -1,4 +1,6 @@
 * {
+    background-image: url("https://cache.desktopnexus.com/cropped-wallpapers/2083/2083764-1920x1080-[DesktopNexus.com].jpg?st=lS1CWh-tj0-XCpVE6JsQYw&e=1601447345");
+
     background-color: gray;
 }
 
@@ -26,6 +28,7 @@ body {
     margin-top: 0%;
     background-color: gray;
     color: white;
+    background-image: url("https://cache.desktopnexus.com/cropped-wallpapers/2083/2083764-1920x1080-[DesktopNexus.com].jpg?st=lS1CWh-tj0-XCpVE6JsQYw&e=1601447345");
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -64,4 +67,29 @@ body {
     
 }
 
+.quest-class {
+    text-align: center;
+    color: white;
+    border:black;
+    font-weight: bold;
+    font-size: 45px;
+    margin: 10% 20% 1% 20%;
+    
+    
+    
+}
 
+.ans-class {
+    text-align: center;
+    box-shadow: lightslategray;
+    background-color: black;
+    color: white;
+    border:black;
+    border-width: 5px 10px;
+    border-radius: 10px 10px;
+    font-weight: bold;
+    font-size: 35px;
+    margin: 1% 20% 1% 20%;
+    padding:5px 5px 5px 5px;
+    
+}

@@ -17,6 +17,7 @@ var timeLeft = 75;
 var timeInterval;
 var score = 0;
 var correct;
+var currentQuestionIndex = 0;
 
 // Set the text content of my elements
 h1ElCoding.textContent = "Coding Quiz Challenge!";
@@ -55,7 +56,7 @@ var timeLeft = 75;
 var timeInterval;
 var score = 0;
 var correct;
-
+var currentQuestionIndex = 0;
 
 
 
@@ -98,7 +99,7 @@ var quizQuestions = [{
 
 ];
 
-
+console.log(quizQuestions[1]);
 function hide (x) {
    x.style.display="none";
 
@@ -106,13 +107,19 @@ function hide (x) {
 
 
 function show(x) {
-    x.style.display="initial"
+    x.style.display="initial";
 }
 
+function correctAnswer (x) {
+    if(x === quizQuestions[0].choiceC) {
+        displayQuestion2;
+    }
+} 
 
 function startQuiz() {
     hide(mainDivEl);
-
+    displayQuestion1();
+    console.log
     // Timer function
     timeInterval = setInterval(function() {
         timeLeft--;
@@ -127,3 +134,90 @@ function startQuiz() {
 
 
 startQuizBtn.addEventListener("click" , startQuiz);
+
+
+
+function displayQuestion1() {
+    
+    
+    // creates the q and a elements
+    var body = document.body;
+    var questionEl = document.createElement("p");
+    var answerEl1 = document.createElement("button");
+    var answerEl2 = document.createElement("button");
+    var answerEl3 = document.createElement("button");
+    var answerEl4 = document.createElement("button");
+    var listOfBtns = document.getElementsByTagName("button")
+    // assigns the elements a class
+    questionEl.className += "quest-class";
+    answerEl1.className += "ans-class"
+    answerEl2.className += "ans-class";
+    answerEl3.className += "ans-class";
+    answerEl4.className += "ans-class";
+    
+    // appends the elements to the body
+    body.appendChild(questionEl);
+    body.appendChild(answerEl1);
+    body.appendChild(answerEl2);
+    body.appendChild(answerEl3);
+    body.appendChild(answerEl4);
+    
+    // fills in text from array of object
+    questionEl.textContent = quizQuestions[0].question;
+    answerEl1.textContent = quizQuestions[0].choiceA;
+    answerEl2.textContent = quizQuestions[0].choiceB;
+    answerEl3.textContent = quizQuestions[0].choiceC;
+    answerEl4.textContent = quizQuestions[0].choiceD;
+
+    answerEl1.addEventListener("click" , clicked2);
+    answerEl2.addEventListener("click" ,clicked2);
+    answerEl3.addEventListener("click" , clicked);
+    answerEl4.addEventListener("click" ,clicked2);
+
+    function clicked () {
+        hide(mainDivEl);
+        hide(questionEl);
+        displayQuestion2();
+    }
+    function clicked2 () {
+        hide(questionEl);
+        hide(mainDivEl);
+        timeLeft = timeLeft - 10;
+        displayQuestion2();
+    }
+}
+
+function displayQuestion2() {
+    
+    
+    // creates the q and a elements
+    var body = document.body
+    var questionEl = document.createElement("p");
+    var answerEl1 = document.createElement("button");
+    var answerEl2 = document.createElement("button");
+    var answerEl3 = document.createElement("button");
+    var answerEl4 = document.createElement("button");
+    
+    // assigns the elements a class
+    questionEl.className += "quest-class";
+    answerEl1.className += "ans-class"
+    answerEl2.className += "ans-class";
+    answerEl3.className += "ans-class";
+    answerEl4.className += "ans-class";
+    
+    // appends the elements to the body
+    body.appendChild(questionEl);
+    body.appendChild(answerEl1);
+    body.appendChild(answerEl2);
+    body.appendChild(answerEl3);
+    body.appendChild(answerEl4);
+    
+    // fills in text from array of object
+    questionEl.textContent = quizQuestions[1].question;
+    answerEl1.textContent = quizQuestions[1].choiceA;
+    answerEl2.textContent = quizQuestions[1].choiceB;
+    answerEl3.textContent = quizQuestions[1].choiceC;
+    answerEl4.textContent = quizQuestions[1].choiceD;
+
+    
+}
